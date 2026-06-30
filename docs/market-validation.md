@@ -99,32 +99,42 @@ Implication for `llm-selector`:
 - The project should avoid competing as a benchmark leaderboard.
 - The stronger niche is customer-side decision support: scenario, budget, data sensitivity, deployment, tool fit, and verification.
 
-### 10 public demand cases
+### 10 investor-readable business cases
 
-These cases are public GitHub issue examples that show concrete user demand. They should be treated as market evidence, not direct customer commitments.
+These cases translate public GitHub demand signals into business logic an investor can understand. They are not customer claims; they show repeated, public evidence of budget-relevant pain.
 
-| # | Source | Demand category | User pain | `llm-selector` opportunity |
-|---|--------|-----------------|-----------|----------------------------|
-| 1 | [continuedev/continue#12581](https://github.com/continuedev/continue/issues/12581) | Provider support / OpenAI-compatible gateway | A user wanted a new OpenAI-compatible gateway documented or added as a provider. | Maintain provider-selection guidance that covers compatibility, model discovery, and setup readiness. |
-| 2 | [continuedev/continue#12875](https://github.com/continuedev/continue/issues/12875) | Gateway incompatibility | An external OpenAI-compatible model failed with opaque 400 errors in a coding CLI. | Explain that OpenAI-compatible endpoints still need client-specific validation before rollout. |
-| 3 | [continuedev/continue#9797](https://github.com/continuedev/continue/issues/9797) | Context window / local model operation | A local model stack hit context-overflow errors because client behavior and real server limits did not align. | Include usable context, serving stack, and client behavior in model-stack recommendations. |
-| 4 | [continuedev/continue#10495](https://github.com/continuedev/continue/issues/10495) | Model identity / local setup | A local Ollama model appeared to self-identify as a different model family. | Add identity and behavior verification as part of endpoint trust checks. |
-| 5 | [cline/cline#10596](https://github.com/cline/cline/issues/10596) | Cost / provider routing | A coding-assistant user reported 3-5x higher costs when provider routing could not be pinned. | Provide cost-aware provider and gateway selection advice before teams scale usage. |
-| 6 | [cline/cline#9433](https://github.com/cline/cline/issues/9433) | Usage tracking / observability | An OpenAI-compatible provider returned missing usage metadata, so context and cost tracking broke. | Treat usage metadata quality as a provider-selection criterion. |
-| 7 | [cline/cline#9847](https://github.com/cline/cline/issues/9847) | Endpoint configuration | A user could not find how to configure an OpenAI-compatible endpoint in a coding tool. | Package recommendations with setup instructions, not only model rankings. |
-| 8 | [langgenius/dify#37881](https://github.com/langgenius/dify/issues/37881) | Enterprise / intranet constraints | A self-hosted deployment hit plugin-install issues in offline or proxied network environments. | Evaluate network, proxy, dependency, and offline-readiness for SME/private deployments. |
-| 9 | [langgenius/dify#35772](https://github.com/langgenius/dify/issues/35772) | Cost attribution / governance | A user wanted app-level identity passed to model providers for provider-side cost attribution. | Include billing governance, chargeback, and per-workflow cost tracking in SME recommendations. |
-| 10 | [open-webui/open-webui#26222](https://github.com/open-webui/open-webui/issues/26222) | Private RAG reliability | A self-hosted knowledge-base workflow lost file links even though API calls returned success. | Assess RAG-readiness and self-hosted workflow reliability, not just model quality. |
+| # | Public signal | Customer profile | Business pain | Current workaround | Why budget exists | `llm-selector` product angle |
+|---|---------------|------------------|---------------|--------------------|-------------------|------------------------------|
+| 1 | [continuedev/continue#12581](https://github.com/continuedev/continue/issues/12581) | Developer or small team evaluating a new LLM gateway | Provider choice is fragmented; teams cannot tell whether a new gateway is ready for their coding workflow. | Wait for tool maintainers to add docs or manually test provider configs. | A working AI coding setup can save developer hours, but failed setup wastes engineering time. | Sell an AI coding stack recommendation that maps model, gateway, tool, and setup risk. |
+| 2 | [continuedev/continue#12875](https://github.com/continuedev/continue/issues/12875) | Team trying to use a third-party OpenAI-compatible endpoint | "OpenAI-compatible" still fails in real clients, creating setup delays and uncertainty about vendor reliability. | Debug opaque API errors internally or switch providers without knowing root cause. | Teams pay to avoid wasting engineering cycles on endpoint integration failures. | Offer endpoint compatibility checks before a team commits to a provider. |
+| 3 | [continuedev/continue#9797](https://github.com/continuedev/continue/issues/9797) | Cost-conscious developer using local models for coding | Advertised context length does not equal usable context in a real local stack. | Tune local server/client settings by trial and error. | Local models are attractive for cost and privacy, but only if setup is productive. | Add local-model stack fit scoring: model, serving layer, client behavior, context limits. |
+| 4 | [continuedev/continue#10495](https://github.com/continuedev/continue/issues/10495) | Developer or company using local/self-hosted LLMs | If the model behavior or identity is unclear, users lose confidence in outputs and compliance assumptions. | Manually inspect prompts, model templates, and responses. | Trust and compliance are buying criteria when internal work or customer data is involved. | Bundle model identity and behavior verification into selection reports. |
+| 5 | [cline/cline#10596](https://github.com/cline/cline/issues/10596) | AI coding power user or small engineering team using a gateway | Provider routing can silently multiply inference costs. | Monitor bills after the fact or avoid gateways. | Cost surprises create a clear willingness to pay for prevention and provider guidance. | Position cost-control review as a paid add-on for AI coding rollouts. |
+| 6 | [cline/cline#9433](https://github.com/cline/cline/issues/9433) | Team using OpenAI-compatible providers in daily coding workflows | Missing usage metadata makes context and spend hard to manage. | Rely on rough estimates or external billing dashboards. | Finance and engineering need usage visibility before scaling from one user to a team. | Score providers on observability: usage fields, token accounting, billing transparency. |
+| 7 | [cline/cline#9847](https://github.com/cline/cline/issues/9847) | Non-expert user choosing an AI coding assistant | Model selection is not enough; endpoint configuration blocks adoption. | Search docs, copy examples, or ask community forums. | The buyer is paying for a working outcome, not a model name. | Turn recommendations into practical setup playbooks for specific tools. |
+| 8 | [langgenius/dify#37881](https://github.com/langgenius/dify/issues/37881) | SME or IT team deploying AI behind corporate network controls | Offline/proxied environments break plugins and dependencies, delaying deployment. | Ask IT to open network access or patch deployment manually. | Private deployment projects already imply implementation budget and risk ownership. | Sell private-deployment readiness checks for AI workflows. |
+| 9 | [langgenius/dify#35772](https://github.com/langgenius/dify/issues/35772) | Organization running multiple AI apps or workflows | LLM spend cannot be attributed by app, team, or workflow. | Manual billing reconciliation or one shared provider account. | Cost allocation becomes necessary once AI usage spreads beyond a single experiment. | Add governance criteria: app-level tracking, chargeback, usage reporting. |
+| 10 | [open-webui/open-webui#26222](https://github.com/open-webui/open-webui/issues/26222) | SME building private knowledge-base/RAG workflows | API success does not guarantee reliable knowledge-base behavior in production. | Manually retest RAG flows or switch platforms after failure. | Internal knowledge-base projects are tied to productivity and data-control budgets. | Offer RAG stack selection and deployment-risk review, not only model recommendations. |
 
-### Case patterns
+### Investor interpretation
 
-These 10 cases cluster into five buyer needs:
+These cases show a repeatable commercial pattern:
 
-1. **AI coding stack selection:** users need the right model, provider, endpoint, and tool combination.
-2. **Compatibility verification:** OpenAI-compatible gateways still fail in real clients.
-3. **Endpoint trust:** model identity, context claims, and routed provider can differ from user expectation.
-4. **Cost governance:** routing, usage metadata, and attribution affect whether teams can safely scale.
-5. **Private deployment readiness:** intranet, offline, RAG, and plugin constraints are practical buying criteria.
+1. **The buyer is not buying a benchmark.** They are buying a working AI workflow.
+2. **The failure point is often integration, not model intelligence.** Provider, endpoint, client, context, billing, and deployment constraints decide success.
+3. **The pain has budget logic.** The cost of failed setup, wrong routing, privacy risk, or unreliable RAG is higher than a lightweight selection review.
+4. **The wedge starts with developers but expands to SMEs.** AI coding users expose the pain first; the same selection logic applies to knowledge base, support, document, and private deployment use cases.
+5. **The defensible asset is a case library.** Every public issue, selection request, and anonymized outcome improves future recommendations.
+
+### Commercial thesis
+
+`llm-selector` can become the customer-side decision layer before LLM adoption:
+
+```text
+Model confusion → free selection report → endpoint/risk review → paid stack recommendation → PoC plan → implementation support
+```
+
+The business is not "selling model rankings." The business is reducing failed AI adoption decisions for small teams and SMEs.
 
 ## Interview log
 
