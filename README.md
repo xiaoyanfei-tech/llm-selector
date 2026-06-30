@@ -137,6 +137,23 @@ Choose the right LLM → verify you're actually using it → run a focused PoC
 - GPT family
 - Local open-source models
 
+## Commercial-ready next steps
+
+This repo can be used as a lead-capture and consulting workflow:
+
+- Start with the CLI selection report
+- Use [`docs/client-intake.md`](docs/client-intake.md) to collect business context
+- Use [`docs/report-template.md`](docs/report-template.md) for a paid selection report
+- Use [`docs/poc-plan.md`](docs/poc-plan.md) for a 2-4 week implementation plan
+- Use [`docs/services.md`](docs/services.md) to describe available consulting deliverables
+
+Potential paid deliverables:
+
+- LLM selection report
+- AI coding stack recommendation
+- endpoint verification report
+- PoC plan and integration checklist
+
 ## Need help?
 
 If you are choosing an LLM stack for a small or medium-sized business, this tool can produce a first-pass report. For deeper help, open an issue with your use case:
