@@ -99,6 +99,33 @@ Implication for `llm-selector`:
 - The project should avoid competing as a benchmark leaderboard.
 - The stronger niche is customer-side decision support: scenario, budget, data sensitivity, deployment, tool fit, and verification.
 
+### 10 public demand cases
+
+These cases are public GitHub issue examples that show concrete user demand. They should be treated as market evidence, not direct customer commitments.
+
+| # | Source | Demand category | User pain | `llm-selector` opportunity |
+|---|--------|-----------------|-----------|----------------------------|
+| 1 | [continuedev/continue#12581](https://github.com/continuedev/continue/issues/12581) | Provider support / OpenAI-compatible gateway | A user wanted a new OpenAI-compatible gateway documented or added as a provider. | Maintain provider-selection guidance that covers compatibility, model discovery, and setup readiness. |
+| 2 | [continuedev/continue#12875](https://github.com/continuedev/continue/issues/12875) | Gateway incompatibility | An external OpenAI-compatible model failed with opaque 400 errors in a coding CLI. | Explain that OpenAI-compatible endpoints still need client-specific validation before rollout. |
+| 3 | [continuedev/continue#9797](https://github.com/continuedev/continue/issues/9797) | Context window / local model operation | A local model stack hit context-overflow errors because client behavior and real server limits did not align. | Include usable context, serving stack, and client behavior in model-stack recommendations. |
+| 4 | [continuedev/continue#10495](https://github.com/continuedev/continue/issues/10495) | Model identity / local setup | A local Ollama model appeared to self-identify as a different model family. | Add identity and behavior verification as part of endpoint trust checks. |
+| 5 | [cline/cline#10596](https://github.com/cline/cline/issues/10596) | Cost / provider routing | A coding-assistant user reported 3-5x higher costs when provider routing could not be pinned. | Provide cost-aware provider and gateway selection advice before teams scale usage. |
+| 6 | [cline/cline#9433](https://github.com/cline/cline/issues/9433) | Usage tracking / observability | An OpenAI-compatible provider returned missing usage metadata, so context and cost tracking broke. | Treat usage metadata quality as a provider-selection criterion. |
+| 7 | [cline/cline#9847](https://github.com/cline/cline/issues/9847) | Endpoint configuration | A user could not find how to configure an OpenAI-compatible endpoint in a coding tool. | Package recommendations with setup instructions, not only model rankings. |
+| 8 | [langgenius/dify#37881](https://github.com/langgenius/dify/issues/37881) | Enterprise / intranet constraints | A self-hosted deployment hit plugin-install issues in offline or proxied network environments. | Evaluate network, proxy, dependency, and offline-readiness for SME/private deployments. |
+| 9 | [langgenius/dify#35772](https://github.com/langgenius/dify/issues/35772) | Cost attribution / governance | A user wanted app-level identity passed to model providers for provider-side cost attribution. | Include billing governance, chargeback, and per-workflow cost tracking in SME recommendations. |
+| 10 | [open-webui/open-webui#26222](https://github.com/open-webui/open-webui/issues/26222) | Private RAG reliability | A self-hosted knowledge-base workflow lost file links even though API calls returned success. | Assess RAG-readiness and self-hosted workflow reliability, not just model quality. |
+
+### Case patterns
+
+These 10 cases cluster into five buyer needs:
+
+1. **AI coding stack selection:** users need the right model, provider, endpoint, and tool combination.
+2. **Compatibility verification:** OpenAI-compatible gateways still fail in real clients.
+3. **Endpoint trust:** model identity, context claims, and routed provider can differ from user expectation.
+4. **Cost governance:** routing, usage metadata, and attribution affect whether teams can safely scale.
+5. **Private deployment readiness:** intranet, offline, RAG, and plugin constraints are practical buying criteria.
+
 ## Interview log
 
 | Date | Segment | Problem | Current workaround | Willingness to pay | Notes |
