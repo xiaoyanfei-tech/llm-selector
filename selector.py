@@ -228,7 +228,70 @@ def main() -> int:
     parser.add_argument("--deployment", choices=list(DEPLOYMENT_BOOSTS), default=None)
     parser.add_argument("--output", default="llm-selection-report.md", help="Markdown report output path")
     parser.add_argument("--json", action="store_true", help="Print machine-readable recommendation JSON")
+    parser.add_argument("--share-template", action="store_true", help="Print an anonymized GitHub issue template for sharing your selection result")
+    parser.add_argument("--feedback-template", action="store_true", help="Print a GitHub issue template for feedback")
     args = parser.parse_args()
+
+    if args.share_template:
+        print("""# Share selection result
+
+Open: https://github.com/xiaoyanfei-tech/llm-selector/issues/new/choose
+
+## Context
+
+- Segment: OPC / freelancer / small team / SME / other
+- Scenario:
+- Data sensitivity: public / internal / customer / regulated
+- Budget preference: low / medium / high
+- Deployment preference: API / domestic / private / hybrid
+
+## Recommendation from llm-selector
+
+- #1:
+- #2:
+- #3:
+
+## What did you choose?
+
+- Selected model/tool stack:
+- Why:
+- What did you reject:
+
+## Outcome so far
+
+- Quality:
+- Cost:
+- Setup difficulty:
+- Biggest failure case:
+- Biggest win:
+
+Do not include secrets or confidential data.
+""")
+        return 0
+
+    if args.feedback_template:
+        print("""# llm-selector feedback
+
+Open: https://github.com/xiaoyanfei-tech/llm-selector/issues/new/choose
+
+## What should improve?
+
+- Model recommendation:
+- Scenario coverage:
+- Report wording:
+- Risk section:
+- Cost/ROI framing:
+- Documentation:
+
+## Context
+
+- Segment:
+- Scenario:
+- Models/tools compared:
+
+Do not include secrets or confidential data.
+""")
+        return 0
 
     models = load_json("models.json")
     scenario_data = load_json("scenarios.json")

@@ -75,6 +75,13 @@ Machine-readable output:
 python selector.py --scenario ai_coding --json
 ```
 
+Share or feedback templates:
+
+```bash
+python selector.py --share-template
+python selector.py --feedback-template
+```
+
 ## Example output
 
 ```text
@@ -142,6 +149,11 @@ Choose the right LLM → verify you're actually using it → run a focused PoC
 This repo can be used as a lead-capture and consulting workflow:
 
 - Start with the CLI selection report
+- Read [`ROADMAP.md`](ROADMAP.md) to see where the project is going
+- Read [`CONTRIBUTING.md`](CONTRIBUTING.md) to contribute scenarios, cases, or model notes
+- Read [`docs/vision.md`](docs/vision.md) for the long-term product thesis
+- Read [`docs/go-to-market.md`](docs/go-to-market.md) for the market-first strategy
+- Read [`docs/market-validation.md`](docs/market-validation.md) to track evidence and traction
 - Read [`docs/methodology.md`](docs/methodology.md) to understand the decision framework
 - Use [`docs/client-intake.md`](docs/client-intake.md) to collect business context
 - Use [`docs/packages.md`](docs/packages.md) to choose the smallest useful next step
