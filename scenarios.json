@@ -1,0 +1,37 @@
+{
+  "ai_coding": {
+    "display": "AI coding / developer assistant",
+    "weights": {"glm-5.2": 4, "claude": 4, "deepseek": 3, "gpt": 3, "qwen": 2},
+    "notes": ["Prioritize coding-agent compatibility, tool use, latency, and long-context behavior.", "If using Claude Code through a GLM gateway, verify the endpoint with verify-glm."]
+  },
+  "knowledge_base": {
+    "display": "Enterprise knowledge base / RAG",
+    "weights": {"qwen": 4, "gpt": 3, "kimi": 3, "local-open-source": 3, "glm-5.2": 2},
+    "notes": ["Prioritize retrieval quality, Chinese document handling, data governance, and cost per query."]
+  },
+  "customer_service": {
+    "display": "Customer service chatbot",
+    "weights": {"qwen": 3, "gpt": 3, "deepseek": 2, "glm-5.2": 2, "local-open-source": 2},
+    "notes": ["Prioritize stability, controllability, knowledge-base grounding, and escalation workflow."]
+  },
+  "document_summary": {
+    "display": "Document summary / contract reading",
+    "weights": {"kimi": 4, "qwen": 3, "glm-5.2": 3, "claude": 3, "gpt": 3},
+    "notes": ["Prioritize long-context handling, citation, and hallucination control."]
+  },
+  "translation": {
+    "display": "Translation / bilingual writing",
+    "weights": {"qwen": 3, "gpt": 3, "claude": 3, "glm-5.2": 3, "kimi": 2},
+    "notes": ["Prioritize terminology consistency, style control, and review workflow."]
+  },
+  "data_analysis": {
+    "display": "Data analysis / report assistant",
+    "weights": {"gpt": 3, "claude": 3, "deepseek": 3, "glm-5.2": 2, "qwen": 2},
+    "notes": ["Prioritize tool execution, Python/SQL ability, and data privacy."]
+  },
+  "office_automation": {
+    "display": "Office automation / internal assistant",
+    "weights": {"qwen": 3, "gpt": 3, "glm-5.2": 2, "local-open-source": 2, "kimi": 2},
+    "notes": ["Prioritize integration with existing tools, permission boundaries, and user training."]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "glm-5.2": {
+    "display": "GLM-5.2",
+    "provider": "Zhipu / GLM-compatible gateways",
+    "best_for": ["ai_coding", "long_context", "chinese", "agent_workflows"],
+    "strengths": ["Strong fit for Claude Code-style AI coding", "Long-context friendly", "Good Chinese/English mixed workflows", "Useful when you need OpenAI/Anthropic-compatible gateway routing"],
+    "risks": ["Verify the endpoint is really GLM-5.2 before trusting a gateway", "Gateway compatibility and metadata can vary"],
+    "verification": "Run verify-glm to check tokenizer fingerprint, reasoning_tokens, and optional 1M context support."
+  },
+  "qwen": {
+    "display": "Qwen",
+    "provider": "Alibaba / open-source Qwen ecosystem",
+    "best_for": ["knowledge_base", "private_deployment", "chinese", "document_processing"],
+    "strengths": ["Strong Chinese ecosystem", "Good open-source/private deployment options", "Broad tooling support"],
+    "risks": ["Model size and serving cost vary widely", "Private deployment requires ops capability"],
+    "verification": "Use task-specific samples and tokenizer/metadata checks when routed through gateways."
+  },
+  "deepseek": {
+    "display": "DeepSeek",
+    "provider": "DeepSeek / compatible gateways",
+    "best_for": ["reasoning", "cost_sensitive", "coding", "analysis"],
+    "strengths": ["Strong reasoning/coding value", "Often attractive for cost-sensitive teams", "Good for analysis-heavy workflows"],
+    "risks": ["Latency and availability depend on provider/gateway", "Reasoning models may increase token usage"],
+    "verification": "Validate reasoning behavior, latency, and actual token usage with your own tasks."
+  },
+  "kimi": {
+    "display": "Kimi",
+    "provider": "Moonshot / Kimi-compatible gateways",
+    "best_for": ["long_documents", "document_summary", "chinese", "research"],
+    "strengths": ["Strong long-document reading and summarization", "Good fit for research and document-heavy teams"],
+    "risks": ["May not be the best first choice for coding-agent workflows", "Gateway and context limits should be verified"],
+    "verification": "Run long-document samples and check whether context truncation occurs."
+  },
+  "claude": {
+    "display": "Claude",
+    "provider": "Anthropic / approved providers",
+    "best_for": ["coding", "writing", "agent_workflows", "analysis"],
+    "strengths": ["Strong coding and agentic workflows", "Excellent writing and reasoning UX", "Mature Claude Code ecosystem"],
+    "risks": ["Availability, data policy, and cost may be constraints for some SMEs", "International routing/compliance requirements must be reviewed"],
+    "verification": "Verify policy/compliance fit and cost under realistic usage."
+  },
+  "gpt": {
+    "display": "GPT family",
+    "provider": "OpenAI / compatible providers",
+    "best_for": ["general_purpose", "tooling", "multimodal", "global_ecosystem"],
+    "strengths": ["Broadest ecosystem", "Strong general-purpose capability", "Many integrations and examples"],
+    "risks": ["Cost and data governance need review", "Gateway substitution risk exists with third-party proxies"],
+    "verification": "Check provider authenticity, API behavior, and monthly cost under real workloads."
+  },
+  "local-open-source": {
+    "display": "Local open-source model",
+    "provider": "Self-hosted Qwen/DeepSeek/Llama-style models",
+    "best_for": ["sensitive_data", "private_deployment", "offline", "cost_control"],
+    "strengths": ["Best fit when data must stay internal", "Full control over deployment and logs", "Potentially predictable cost at scale"],
+    "risks": ["Needs GPU/ops expertise", "Quality may lag top hosted models for some tasks", "Maintenance burden is real"],
+    "verification": "Run a small PoC with your own data and measure latency, cost, quality, and ops effort."
+  }
+}
