@@ -154,6 +154,7 @@ This repo can be used as a lead-capture and consulting workflow:
 - Read [`docs/vision.md`](docs/vision.md) for the long-term product thesis
 - Read [`docs/go-to-market.md`](docs/go-to-market.md) for the market-first strategy
 - Read [`docs/market-validation.md`](docs/market-validation.md) to track evidence and traction
+- Read [`docs/case-studies.md`](docs/case-studies.md) for free consultation case studies based on real public questions
 - Read [`docs/methodology.md`](docs/methodology.md) to understand the decision framework
 - Use [`docs/client-intake.md`](docs/client-intake.md) to collect business context
 - Use [`docs/packages.md`](docs/packages.md) to choose the smallest useful next step
