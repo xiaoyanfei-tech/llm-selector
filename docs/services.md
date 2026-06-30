@@ -2,7 +2,27 @@
 
 `llm-selector` is open source. If you need a business-ready recommendation, the same framework can be used as a consulting workflow.
 
-## 1. LLM Selection Report
+## 1. OPC / Personal LLM Selection
+
+For OPCs (one-person companies), independent developers, freelancers, and individual power users choosing an AI stack for daily work.
+
+Deliverables:
+
+- personal workflow analysis
+- recommended model/tool stack
+- cost-control plan
+- AI coding setup recommendation
+- data-safety checklist
+- 7-day adoption plan
+
+Best for:
+
+- solo founders choosing between Claude Code, Cursor, Cline, GLM, Qwen, DeepSeek, Kimi, Claude, GPT, and local models
+- freelancers who need a low-cost but reliable AI workflow
+- individual developers who want help choosing and verifying a model gateway
+- one-person consulting or service businesses adopting AI for coding, writing, documents, or automation
+
+## 2. LLM Selection Report
 
 For small and medium-sized businesses choosing a model stack.
 
@@ -21,7 +41,7 @@ Best for:
 - teams preparing their first AI adoption plan
 - founders who need a practical decision memo rather than a benchmark paper
 
-## 2. AI Coding Stack Recommendation
+## 3. AI Coding Stack Recommendation
 
 For teams adopting AI coding tools.
 
@@ -39,7 +59,7 @@ Best for:
 - companies using GLM-compatible or OpenAI-compatible gateways
 - teams that need to verify the actual model behind a gateway
 
-## 3. Endpoint Verification Report
+## 4. Endpoint Verification Report
 
 For teams that already have a model gateway but want to know whether it is trustworthy.
 
@@ -56,7 +76,7 @@ Best for:
 - OpenAI-compatible gateway acceptance testing
 - AI vendor due diligence
 
-## 4. PoC Implementation Plan
+## 5. PoC Implementation Plan
 
 For teams ready to test a real use case.
 
@@ -73,7 +93,7 @@ Deliverables:
 
 Open an issue using the `Business LLM selection request` template and include:
 
-- company type / industry
+- company type / industry, or OPC/personal workflow type
 - target scenario
 - data sensitivity
 - budget range

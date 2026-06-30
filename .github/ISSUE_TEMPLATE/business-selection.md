@@ -1,10 +1,19 @@
 ---
 name: Business LLM selection request
-about: Request help choosing an LLM stack for a small or medium-sized business
-title: "[Selection Request] <company/use-case summary>"
+about: Request help choosing an LLM stack for an OPC, individual, small team, or SME
+title: "[Selection Request] <personal/company/use-case summary>"
 labels: ["business-selection", "lead"]
 assignees: ""
 ---
+
+## Personal / OPC context
+
+If this is for an individual or one-person company:
+
+- Role / workflow:
+- Main daily tasks:
+- Current AI tools:
+- Monthly budget range:
 
 ## Business context
 
@@ -59,7 +68,7 @@ Select all that apply:
 
 ## What decision do you need?
 
-Example: "Should we use GLM-5.2, Qwen, DeepSeek, Kimi, Claude, GPT, or local deployment for our first PoC?"
+Example: "Should I use Claude Code, Cursor, GLM-5.2, Qwen, DeepSeek, Kimi, GPT, or a local model for my personal/OPC workflow?" or "Should our team use GLM-5.2, Qwen, DeepSeek, Kimi, Claude, GPT, or local deployment for our first PoC?"
 
 ## Security note
 

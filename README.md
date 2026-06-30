@@ -26,8 +26,8 @@ SMEs usually ask something more practical:
 
 ## Who is this for?
 
-- SME founders and IT managers evaluating LLM adoption
-- Developers helping a company choose an AI stack
+- SME founders, OPCs, freelancers, and IT managers evaluating LLM adoption
+- Developers helping a company or individual choose an AI stack
 - Teams comparing GLM, Qwen, DeepSeek, Kimi, Claude, GPT, and local models
 - Consultants preparing an initial AI model selection report
 - Anyone who needs practical model-selection guidance before building a PoC
@@ -149,6 +149,7 @@ This repo can be used as a lead-capture and consulting workflow:
 
 Potential paid deliverables:
 
+- OPC / personal LLM selection
 - LLM selection report
 - AI coding stack recommendation
 - endpoint verification report
