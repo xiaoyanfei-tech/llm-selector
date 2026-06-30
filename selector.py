@@ -110,10 +110,27 @@ def build_report(
         "hybrid": "Hybrid deployment",
     }
 
+    recommended_names = ", ".join(models[key]["display"] for key, _ in top)
+    primary_key, primary_score = top[0]
+    primary = models[primary_key]
+    sensitivity_note = "Private/hybrid data handling should be reviewed before broad rollout." if sensitivity in {"customer", "regulated"} else "Data risk appears manageable for a small PoC if normal redaction rules are followed."
+
     lines = [
-        "# SME LLM Selection Report",
+        "# SME / OPC LLM Selection Report",
         "",
         "> Choose the right LLM, then verify you're actually using it.",
+        "",
+        "## Executive summary",
+        "",
+        f"Recommended first shortlist: **{recommended_names}**.",
+        "",
+        f"Primary recommendation: **{primary['display']}** because it best matches the selected scenario, budget, data sensitivity, and deployment preference.",
+        "",
+        f"Investment posture: start with a small, measurable PoC instead of committing to a large platform contract. {sensitivity_note}",
+        "",
+        "## Decision",
+        "",
+        f"Start with **{primary['display']}** as the first candidate and keep the #2 option as a fallback during PoC. Do not scale spend until quality, cost, and endpoint trust are measured with real tasks.",
         "",
         "## Inputs",
         "",
@@ -144,6 +161,15 @@ def build_report(
         ])
 
     lines.extend([
+        "## Risk register",
+        "",
+        "| Risk | Severity | Mitigation |",
+        "|------|----------|------------|",
+        "| Model/provider mismatch | Medium | Verify third-party gateways before trusting production use. |",
+        "| Cost grows faster than value | Medium | Start with a small PoC and track requests, token usage, and time saved. |",
+        "| Sensitive data exposure | High | Use redaction, private deployment, or hybrid routing for sensitive workflows. |",
+        "| User adoption failure | Medium | Pilot with a small group and measure real workflow improvement. |",
+        "",
         "## Scenario notes",
         "",
     ])
@@ -158,11 +184,12 @@ def build_report(
         "",
         "## Suggested next steps",
         "",
-        "1. Pick the top 1-2 models and run a small PoC with real but non-sensitive samples.",
-        "2. Measure quality, latency, monthly cost, data handling, and user adoption.",
-        "3. If using a third-party LLM gateway, verify that the routed model is actually the claimed model.",
-        "4. If GLM-5.2 is selected for Claude Code or an LLM gateway, run verify-glm: https://github.com/xiaoyanfei-tech/verify-glm",
-        "5. For sensitive data, prefer private deployment, hybrid routing, or strict data-redaction workflows.",
+        "1. Run a 7-day OPC/personal trial or a 2-4 week team PoC before committing to a larger contract.",
+        "2. Pick the top 1-2 models and test with real but non-sensitive samples.",
+        "3. Measure quality, latency, monthly cost, data handling, and actual time saved.",
+        "4. If using a third-party LLM gateway, verify that the routed model is actually the claimed model.",
+        "5. If GLM-5.2 is selected for Claude Code or an LLM gateway, run verify-glm: https://github.com/xiaoyanfei-tech/verify-glm",
+        "6. Expand only when the PoC shows measurable ROI or workflow leverage.",
         "",
         "## If you need a business-ready recommendation",
         "",
@@ -174,6 +201,7 @@ def build_report(
         "",
         "Possible deliverables:",
         "",
+        "- OPC / personal LLM selection",
         "- LLM selection report",
         "- AI coding stack recommendation",
         "- endpoint verification report",

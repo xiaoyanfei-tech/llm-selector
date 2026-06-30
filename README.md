@@ -142,7 +142,9 @@ Choose the right LLM → verify you're actually using it → run a focused PoC
 This repo can be used as a lead-capture and consulting workflow:
 
 - Start with the CLI selection report
+- Read [`docs/methodology.md`](docs/methodology.md) to understand the decision framework
 - Use [`docs/client-intake.md`](docs/client-intake.md) to collect business context
+- Use [`docs/packages.md`](docs/packages.md) to choose the smallest useful next step
 - Use [`docs/report-template.md`](docs/report-template.md) for a paid selection report
 - Use [`docs/poc-plan.md`](docs/poc-plan.md) for a 2-4 week implementation plan
 - Use [`docs/services.md`](docs/services.md) to describe available consulting deliverables
@@ -155,9 +157,19 @@ Potential paid deliverables:
 - endpoint verification report
 - PoC plan and integration checklist
 
+## 中文说明
+
+中文用户请看 [`README.zh-CN.md`](README.zh-CN.md)。
+
 ## Need help?
 
-If you are choosing an LLM stack for a small or medium-sized business, this tool can produce a first-pass report. For deeper help, open an issue with your use case:
+Need help choosing an LLM stack?
+
+Open a selection request:
+
+https://github.com/xiaoyanfei-tech/llm-selector/issues/new/choose
+
+If you are choosing an LLM stack for yourself, an OPC, a small team, or a small/medium-sized business, this tool can produce a first-pass report. For deeper help, open an issue with your use case:
 
 - business scenario
 - data sensitivity
@@ -167,6 +179,7 @@ If you are choosing an LLM stack for a small or medium-sized business, this tool
 
 Possible consulting deliverables:
 
+- OPC / personal LLM selection
 - LLM selection report
 - AI coding stack recommendation
 - enterprise knowledge-base model recommendation
