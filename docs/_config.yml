@@ -1,0 +1,19 @@
+title: llm-selector
+description: "Choose the right LLM, then verify you're actually using it. Free LLM selection guidance, case studies, and daily hot-topic solutions for SMEs, OPCs, and small teams."
+theme: jekyll-theme-cayman
+show_downloads: false
+google_analytics:
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - case-studies.md
+  - hot-topics
+exclude:
+  - client-intake.md
+  - report-template.md
+  - poc-plan.md
+  - services.md
+  - packages.md
