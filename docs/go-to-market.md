@@ -77,6 +77,18 @@ This is the financial leverage: small cost to create many potential future oppor
 - GLM、Qwen、DeepSeek、Kimi、Claude、GPT 怎么选？
 - 为什么选模型后还要验证 endpoint？
 
+### Demand-backed messages
+
+Public GitHub issue patterns suggest the strongest early messages are:
+
+- "Which AI coding model/provider should I actually use?"
+- "OpenAI-compatible is not always compatible — verify before rollout."
+- "Avoid surprise cost, wrong routing, and model mismatch before scaling usage."
+- "Choose a model stack based on scenario, data sensitivity, budget, and deployment constraints."
+- "Private RAG and intranet AI need a different selection path than public API demos."
+
+Use these messages in README copy, GitHub issues, articles, and short posts. Avoid claiming benchmark superiority.
+
 ## Early success metrics
 
 30-day signals:
